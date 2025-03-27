@@ -1,25 +1,43 @@
-# led
-1️⃣ Install Required Dependencies for OpenCV and Hand Tracking
-Run the following commands in your Python environment:
+Touch-Controlled LED Blink with OpenCV & ESP32
 
-sh
-Copy
-Edit
-pip install opencv-python
-pip install mediapipe
-pip install pyserial
+This project combines computer vision (OpenCV) with ESP32 microcontroller to create a virtual touch interface that controls an LED. By interacting with three on-screen buttons, users can trigger different LED states in real time!
 
-4️⃣ Verify Installation
-Run this script to check if OpenCV, MediaPipe, and Serial are correctly installed:
+🔥 Features
 
-python
-Copy
-Edit
-import cv2
-import mediapipe as mp
-import serial
+🖥 Virtual Buttons: Three on-screen buttons to control the LED.
 
-print("OpenCV Version:", cv2.__version__)
-print("MediaPipe Imported Successfully")
-print("PySerial Imported Successfully")
-If no errors appear, you’re ready to go! 🚀
+👆 Touch-Free Interaction: Use finger tracking to “press” buttons.
+
+💡 ESP32 LED Control: Sends signals to an ESP32 board to blink an LED.
+
+⚡ Real-Time Processing: Instant feedback with OpenCV for seamless interaction.
+
+🛠 Technologies Used
+
+🐍 Python
+
+📷 OpenCV (for hand tracking & button detection)
+
+🎛 ESP32 (for hardware LED control)
+
+🔌 Serial Communication (to send commands from Python to ESP32)
+
+🚀 Installation & Setup
+
+Install dependencies:
+
+pip install opencv-python pyserial mediapipe numpy
+
+Flash ESP32 with the provided Arduino code (included in the repository).
+
+Connect the ESP32 to your system via USB.
+
+🎮 How It Works
+
+Virtual Button Setup: Three buttons appear on the screen.
+
+Hand Tracking: OpenCV detects hand movement and fingertip position.
+
+Button Press Simulation: When your fingertip touches a button, it triggers a command.
+
+ESP32 LED Control: The command is sent via serial communication to the ESP32, which blinks the LED accordingly.
